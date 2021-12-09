@@ -1,8 +1,14 @@
 package com.example.carservice;
 
+
+
 import java.util.List;
 
+
 public class Car {
+
+
+    private int id;
 
     private String plateNumber;
     private String manufacturer;
@@ -18,6 +24,14 @@ public class Car {
         this.yearOfManufacture = yearOfManufacture;
         this.description = description;
         this.services = services;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPlateNumber() {

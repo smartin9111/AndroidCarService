@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.carservice.Car;
 import com.example.carservice.CarAdapter;
 import com.example.carservice.CarManager;
+import com.example.carservice.MainActivity;
 import com.example.carservice.R;
 
 import java.util.List;
@@ -30,8 +31,10 @@ public class HomeFragment extends Fragment {
         List<Car> carList = CarManager.loadMockData();
         recyclerView = rootView.findViewById(R.id.carRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-        recyclerView.setAdapter(new CarAdapter(carList));
+        CarAdapter adapter = new CarAdapter(carList, this.getActivity());
+        recyclerView.setAdapter(adapter);
 
         return rootView;
     }
+
 }

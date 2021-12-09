@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private void loadFragment(Fragment fragment, String tag) {
+    public void loadFragment(Fragment fragment, String tag) {
         loadFragment(fragment, tag, true);
     }
 
-    private void loadFragment(Fragment fragment, String tag, boolean addToBackStack) {
+    public void loadFragment(Fragment fragment, String tag, boolean addToBackStack) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment, tag);
         if (addToBackStack) {
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
         transaction.commit();
     }
+
 
     private void showMessage(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
