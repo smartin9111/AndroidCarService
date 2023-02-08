@@ -12,8 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.carservice.ui.addCar.AddCarFragment;
-import com.example.carservice.ui.addService.AddServiceFragment;
+import com.example.carservice.ui.add.AddCarFragment;
 import com.example.carservice.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar mainToolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolbar);
         loadFragment(new HomeFragment(), "Home", false);
-
-
     }
 
     @Override
@@ -45,10 +42,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_add_car:
                 loadFragment(new AddCarFragment(), "Add Car");
                 return true;
-            case R.id.action_add_service:
-                loadFragment(new AddServiceFragment(), "Add Service");
-                return true;
-            // ide még kell egy fragment ha készen lesznek
         }
         return true;
     }
@@ -65,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         }
         transaction.commit();
     }
-
 
     private void showMessage(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();

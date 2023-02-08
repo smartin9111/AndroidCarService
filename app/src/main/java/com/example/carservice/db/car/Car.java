@@ -1,37 +1,33 @@
-package com.example.carservice;
+package com.example.carservice.db.car;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-
-import java.util.List;
-
-
+@Entity(tableName = "cars")
 public class Car {
 
-
-    private int id;
-
+    @PrimaryKey(autoGenerate = true)
+    private int carId;
     private String plateNumber;
     private String manufacturer;
     private String type;
     private String yearOfManufacture;
     private String description;
-    private List<Service> services;
 
-    public Car(String plateNumber, String manufacturer, String type, String yearOfManufacture, String description, List<Service> services) {
+    public Car(String plateNumber, String manufacturer, String type, String yearOfManufacture, String description) {
         this.plateNumber = plateNumber;
         this.manufacturer = manufacturer;
         this.type = type;
         this.yearOfManufacture = yearOfManufacture;
         this.description = description;
-        this.services = services;
     }
 
     public int getId() {
-        return id;
+        return carId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.carId = id;
     }
 
     public String getPlateNumber() {
@@ -74,11 +70,11 @@ public class Car {
         this.description = description;
     }
 
-    public List<Service> getServices() {
-        return services;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setServices(List<Service> services) {
-        this.services = services;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 }

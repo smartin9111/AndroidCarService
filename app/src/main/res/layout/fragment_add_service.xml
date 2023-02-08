@@ -5,10 +5,10 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.addService.AddServiceFragment">
+    tools:context=".ui.add.AddServiceFragment">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextServiceDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -18,10 +18,11 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+        app:layout_constraintTop_toBottomOf="@+id/setDateButton" />
 
-    <EditText
-        android:id="@+id/editTextDate2"
+    <Button
+        android:id="@+id/setDateButton"
+        android:text="Set Date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -34,12 +35,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
+        android:id="@+id/radioGroupAddService"
         android:layout_width="177dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+        app:layout_constraintTop_toBottomOf="@+id/editTextServiceDescription">
 
         <TextView
             android:id="@+id/textView"
@@ -49,18 +51,28 @@
             android:textSize="16sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButtonMandatory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="Mandatory Service" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButtonTechnikal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="Technical Exam" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/addServiceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Add Service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupAddService" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
